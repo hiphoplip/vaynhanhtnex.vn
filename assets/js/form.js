@@ -166,7 +166,7 @@
             
         } catch (error) {
             console.error('Form submission error:', error);
-            showError('Có lỗi xảy ra. Vui lòng thử lại sau hoặc gọi hotline: 0919.570.488');
+            showError('Có lỗi xảy ra. Vui lòng thử lại sau hoặc gọi hotline: 0393.320.612');
         }
     }
     

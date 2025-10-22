@@ -171,8 +171,37 @@
         gap: var(--space-3);
     }
     
-    /* Floating Badges - Hide on Mobile */
-    .floating-badge {
+    /* Recruitment Card - Mobile */
+    .recruitment-card {
+        padding: var(--space-6);
+    }
+    
+    .recruitment-title {
+        font-size: 1.5rem;
+    }
+    
+    .recruitment-feature {
+        padding: var(--space-2);
+    }
+    
+    .recruitment-feature .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .recruitment-cta {
+        font-size: 0.9375rem;
+        padding: var(--space-3) var(--space-4);
+    }
+    
+    .recruitment-note {
+        font-size: 0.75rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .floating-decoration {
         display: none;
     }
     
