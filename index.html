@@ -10,8 +10,58 @@
     <meta name="description" content="Vay tiêu dùng Tnex" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- External JavaScript Files -->
-    <script src="assets/js/viewport.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.ladi_viewport = function (b) {
+        var a = document;
+        b = b ? b : 'innerWidth';
+        var c = window[b];
+        var d = true;
+        if (
+          typeof window.ladi_is_desktop == 'undefined' ||
+          window.ladi_is_desktop == undefined
+        ) {
+          window.ladi_is_desktop = !d;
+        }
+        var e = 960;
+        var f = 420;
+        var g = '';
+        if (!d) {
+          g = 'width=' + e + ',user-scalable=no,initial-scale=1.0';
+        } else {
+          var h = 1;
+          var i = f;
+          if (i != c) {
+            h = c / i;
+          }
+          g =
+            'width=' +
+            i +
+            ',user-scalable=no,initial-scale=' +
+            h +
+            ',minimum-scale=' +
+            h +
+            ',maximum-scale=' +
+            h;
+        }
+        var j = a.getElementById('viewport');
+        if (!j) {
+          j = a.createElement('meta');
+          j.id = 'viewport';
+          j.name = 'viewport';
+          a.head.appendChild(j);
+        }
+        j.setAttribute('content', g);
+      };
+      window.ladi_viewport();
+      window.ladi_fbq_data = [];
+      window.ladi_fbq = function () {
+        window.ladi_fbq_data.push(arguments);
+      };
+      window.ladi_ttq_data = [];
+      window.ladi_ttq = function () {
+        window.ladi_ttq_data.push(arguments);
+      };
+    </script>
     <link rel="canonical" href="https://www.tnexfinance.online" />
     <meta property="og:url" content="https://www.tnexfinance.online" />
     <meta property="og:title" content="Vay tiêu dùng TNEX Finance" />
@@ -59,10 +109,6 @@
       href="https://w.ladicdn.com/v5/source/ladipagev3.min.js?v=1760778969837"
       as="script"
     />
-    <!-- External CSS Files -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/loan-calculator.css" />
-    
     <style id="style_ladi" type="text/css">
       a,
       abbr,
@@ -3000,9 +3046,7 @@
                 </div>
               </div>
 
-              <!-- Loan calculator styles moved to assets/css/loan-calculator.css -->
               <style>
-                /* Inline styles removed - see assets/css/loan-calculator.css */
                 .loan-calculator {
                   max-width: 500px;
                   width: 90%;
@@ -3254,8 +3298,6 @@
                 };
                 LoanCalculator.init();
               </script>
-              <!-- Loan calculator script moved to assets/js/loan-calculator.js -->
-              <script src="assets/js/loan-calculator.js"></script>
             </div>
           </div>
           <div data-action="true" id="BUTTON12" class="ladi-element">
@@ -3650,8 +3692,6 @@
     <div id="backdrop-popup" class="backdrop-popup"></div>
     <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
     <div id="lightbox-screen" class="lightbox-screen"></div>
-    <!-- Lazyload script moved to assets/js/lazyload.js -->
-    <script src="assets/js/lazyload.js" type="text/javascript"></script>
     <script id="script_lazyload" type="text/javascript">
       window.lazyload_run = function (dom, is_first, check_dom_rect) {
         if (
@@ -3810,248 +3850,5 @@
       src="https://w.ladicdn.com/v5/source/ladipagev3.min.js?v=1760778969837"
       type="text/javascript"
     ></script>
-    <script id="script_event_data" type="application/json">
-      {
-        "HEADLINE3": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE5": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE6": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE7": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE19": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE47": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE48": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE49": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE50": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE51": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON_TEXT11": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON11": { "a": "button", "D": "pulse", "A": "2s" },
-        "FORM_ITEM21": { "a": "form_item", "bS": "text", "bQ": 1 },
-        "FORM_ITEM22": { "a": "form_item", "bS": "tel", "bQ": 3 },
-        "FORM8": {
-          "option.dynamic_form_config": "&#123;&#34;configs&#34;:[],&#34;default_actions&#34;:[&#123;&#34;text_thankyou_value&#34;:&#34;Cảm ơn bạn đã đăng ký, nhân viên Tnex Finance sẽ liên hệ và tư vấn sớm nhất cho bạn&#34;,&#34;type&#34;:&#34;form_redirect_url&#34;,&#34;no_delete&#34;:true,&#34;redirect_url&#34;:&#34;https://cl.tnexfinance.com.vn/confirmvaytieudung&#34;,&#34;app_link&#34;:&#34;https://tnex.go.link/eoPy3&#34;&#125;]&#125;",
-          "a": "form",
-          "cs": [{ "dw": "POPUP_OTP", "dr": "complete", "a": "popup" }],
-          "bP": "63f30b49549c9900127a91b1",
-          "bM": true,
-          "bF": "SubmitForm",
-          "bA": true,
-          "by": true,
-          "bx": true
-        },
-        "HEADLINE55": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE57": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE58": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON_TEXT12": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON12": {
-          "a": "button",
-          "cs": [{ "dr": "action", "dw": "SECTION7", "a": "section" }]
-        },
-        "HEADLINE59": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE60": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "PARAGRAPH16": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "HEADLINE66": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON_TEXT14": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "BUTTON14": {
-          "a": "button",
-          "cs": [{ "dr": "action", "dw": "SECTION7", "a": "section" }]
-        },
-        "PARAGRAPH19": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH20": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH22": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH25": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH27": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH28": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "PARAGRAPH31": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "paragraph"
-        },
-        "FORM_ITEM24": { "a": "form_item", "bS": "text", "bQ": 3 },
-        "SHAPE9": {
-          "a": "shape",
-          "cs": [{ "dr": "action", "dw": "0919570488", "a": "phone" }],
-          "aB": true,
-          "ax": "default",
-          "au": "0px",
-          "ar": "0px",
-          "ao": "0px",
-          "al": "0px"
-        },
-        "SHAPE10": {
-          "a": "shape",
-          "cs": [
-            {
-              "dr": "action",
-              "dv": "_blank",
-              "dw": "http://zalo.me/0919570488",
-              "a": "link"
-            }
-          ],
-          "aB": true,
-          "ax": "default",
-          "au": "0px",
-          "ar": "0px",
-          "ao": "0px",
-          "al": "0px"
-        },
-        "BUTTON_TEXT15": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline",
-          "D": "bounce",
-          "A": "1s"
-        },
-        "BUTTON15": {
-          "a": "button",
-          "cs": [{ "dr": "action", "dw": "0919570488", "a": "phone" }],
-          "aB": true,
-          "ax": "default",
-          "au": "0px",
-          "ar": "0px",
-          "ao": "0px",
-          "al": "0px"
-        },
-        "HEADLINE75": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE76": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE77": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE78": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        },
-        "HEADLINE79": {
-          "option.is_product_mapping_name_custom": true,
-          "a": "headline"
-        }
-      }
-    </script>
-    <script id="script_ladipage_run" type="text/javascript">
-      (function () {
-        var run = function () {
-          if (
-            typeof window.LadiPageScript == 'undefined' ||
-            typeof window.ladi == 'undefined' ||
-            window.ladi == undefined
-          ) {
-            setTimeout(run, 100);
-            return;
-          }
-          // window.LadiPageApp = window.LadiPageApp || new window.LadiPageAppV2();
-          // window.LadiPageScript.runtime.ladipage_id =
-          //   '68ef3eeaa34c4800128be5b4';
-          // window.LadiPageScript.runtime.publish_platform = 'LADIPAGEDNS';
-          // window.LadiPageScript.runtime.is_mobile_only = true;
-          // window.LadiPageScript.runtime.version = '1760778969837';
-          // window.LadiPageScript.runtime.cdn_url =
-          //   'https://w.ladicdn.com/v5/source/';
-          // window.LadiPageScript.runtime.DOMAIN_SET_COOKIE = [
-          //   'tnexfinance.online',
-          // ];
-          // window.LadiPageScript.runtime.DOMAIN_FREE = [
-          //   'preview.ldpdemo.com',
-          //   'ldp.page',
-          // ];
-          // window.LadiPageScript.runtime.bodyFontSize = 12;
-          // window.LadiPageScript.runtime.store_id = '6007e52aeb5cb00037ccdd90';
-          // window.LadiPageScript.runtime.store_ladiuid =
-          //   '6007e52855e1f5001333a7c1';
-          // window.LadiPageScript.runtime.time_zone = 7;
-          // window.LadiPageScript.runtime.currency = 'VND';
-          // window.LadiPageScript.runtime.convert_replace_str = true;
-          // window.LadiPageScript.runtime.desktop_width = 960;
-          // window.LadiPageScript.runtime.mobile_width = 420;
-          // window.LadiPageScript.runtime.formdata = true;
-          // window.LadiPageScript.runtime.tracking_button_click = true;
-          // window.LadiPageScript.runtime.publish_time = 1760879454355;
-          // window.LadiPageScript.runtime.lang = 'vi';
-          // window.LadiPageScript.run(true);
-          // window.LadiPageScript.runEventScroll();
-        };
-        run();
-      })();
-    </script>
   </body>
 </html>
