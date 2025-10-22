@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Không tìm thấy trang | TNEX Finance</title>
+    <meta name="description" content="Trang bạn tìm kiếm không tồn tại">
+    <link rel="icon" type="image/x-icon" href="https://static.ladipage.net/660936f1f579bf0012655c35/unnamed-20250401084102-vu-7f.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d62f2 0%, #06b2e4 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        .error-code {
+            font-size: 150px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-message {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0 40px;
+            opacity: 0.95;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #0d62f2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #0d62f2;
+        }
+        
+        .search-container {
+            margin-top: 40px;
+            display: none; /* Hide for now, can be enabled later */
+        }
+        
+        .search-box {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 16px;
+        }
+        
+        .search-btn {
+            padding: 12px 30px;
+            background: #f24213;
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: #d63a0f;
+        }
+        
+        .footer-note {
+            margin-top: 60px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 100px;
+            }
+            
+            .error-message {
+                font-size: 24px;
+            }
+            
+            .error-description {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Không tìm thấy trang</h2>
+        <p class="error-description">
+            Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã được chuyển đi.<br>
+            Vui lòng kiểm tra lại đường dẫn hoặc quay về trang chủ.
+        </p>
+        
+        <div class="action-buttons">
+            <a href="/" class="btn">Về trang chủ</a>
+            <a href="tel:0919570488" class="btn btn-secondary">Gọi ngay: 0919 570 488</a>
+        </div>
+        
+        <div class="search-container">
+            <form class="search-box" onsubmit="return false;">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button type="submit" class="search-btn">Tìm</button>
+            </form>
+        </div>
+        
+        <p class="footer-note">
+            CÔNG TY TÀI CHÍNH TNHH MTV TNEX<br>
+            Hotline: 0919 570 488
+        </p>
+    </div>
+    
+    <script>
+        // Log 404 error for analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_not_found', {
+                'page_path': window.location.pathname
+            });
+        }
+        
+        // Optionally redirect after a delay
+        // setTimeout(function() {
+        //     window.location.href = '/';
+        // }, 10000); // Redirect after 10 seconds
+    </script>
+</body>
+</html>
