@@ -1,11 +1,14 @@
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
+# Ignore EVERYTHING except dist/
+# Only dist/ will be committed to GitHub
 
-# Thumbnails
-Thumbs.db
+# Source code and build files
+src/
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output - CẦN commit dist/ để deploy
+# dist/ is NOT ignored - will be committed
 
 # IDE
 .vscode/
@@ -14,40 +17,26 @@ Thumbs.db
 *.swo
 *~
 
+# OS
+.DS_Store
+Thumbs.db
+
 # Logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Temporary files
-*.tmp
-.cache/
-.temp/
-
-# Backup files
-*_backup.html
-*.bak
-*.backup
-
-# Node modules (if using npm in future)
-node_modules/
-package-lock.json
-yarn.lock
-
-# Build outputs
-dist/
-build/
-
-# Environment variables
+# Environment
 .env
 .env.local
-.env.*.local
 
-# Testing
-coverage/
-.nyc_output/
+# GitHub Actions (not needed for Option 1)
+.github/
 
-# OS generated files
-ehthumbs.db
-Desktop.ini
+# Other files
+*.md
+dist/
+
+# Root level files (should be in src/ or dist/)
+# index.html
+# assets/
+# CNAME
